@@ -1,15 +1,15 @@
 <?php 
 
-        $servidor = 'localhost';
-        $usuario = 'root';
-        $senha = '';
-        $banco = 'escola_luis';
+    $servidor = 'localhost';
+    $usuario = 'root';
+    $senha = '';
+    $banco = 'escola_luis';
 
     $conexao = new mysqli($servidor,$usuario,$senha,$banco);
    
     if($conexao ->connect_error) {
-    die('erro de conexão');
-}
+        die('erro de conexão');
+    }
 
     $sql = "SELECT id,nome, idade, uf, cidade FROM  alunos";
     $resultado = $conexao->query($sql);
@@ -22,15 +22,15 @@
                //resumidão <table>tabela, <tr>linha, <td>coluna, <th>titulo
         echo"<table border='1'>";
         echo"<tr>
-                <tr>ID<tr>
-                <tr>Nome<tr>
-                <tr>Idade<tr>
-                <tr>UF<tr>
-                <tr>cidade<tr>
-                <tr/>";
+                <th>ID</th>
+                <th>Nome</th>
+                <th>Idade</th>
+                <th>UF</th>
+                <th>cidade</th>
+            <tr/>";
 
 
-    while ($linha = $resultado->fetch_assoc()) {
+        while ($linha = $resultado->fetch_assoc()) {
 
 //ANOTAÇÃO: 
             echo"<tr>";
@@ -40,9 +40,9 @@
             echo "<td>{$linha['uf']} </td>";
             echo "<td>{$linha['cidade']}</td>";
             echo "</tr>";
+        }
+
+        echo"</table>";
+
     }
-
-    echo"</table>";
-
-}
 ?>
