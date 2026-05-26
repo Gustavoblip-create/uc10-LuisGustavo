@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Cadastro curriculo</title>
+</head>
+
+<body>
+    <!--OBSERVAÇÔES: form : --> <!--OBSERVAÇÔES: method: é atributo --> <!--OBSERVAÇÔES: GET seria uma forma de mostra a informaçâo de forma exposta na URL --> <!--OBSERVAÇÔES: action: é onde eu quero manda a informação do html no caso escolhi "03_form.php"-->
+
+    <form method="POST" action="03_form.php" enctype="multipart/form-data">
+
+        <!-- NOME é apenas um rotulo, literalmente um texto--> <!--INPUT é um aTAG html, campo de entrada para o usuariointeragir--> <!--type pé um atributo e recbe um valor type="text" =--> <!--text define o tipo de campo--> <!--name = "nome" também é u atributo, essse é o nome da variavel que vai para o PHP-->
+
+        <h3>Informações Básicas</h3>
+
+        Nome: <input type="text" name="nome"><br>
+
+        E-mail: <input type="email" name="email"><br>
+
+        numero: <input type="number" name="numero"><br>
+
+        Linkedin: <input type="url" name="url"><br>
+
+        Idade: <input type="number" name="idade"><br>
+
+        curriculo: <input type="file" name="file"><br>
+
+
+        sexo:
+        <input type="radio" name="sexo" value="masculino"> masculino
+        <input type="radio" name="sexo" value="feminino"> feminino
+        <br>
+
+        <h3>Experiencia</h3>
+
+        Nome da empresa: <input type="text" name="nome_empresa"><br>
+
+        Mês de entrada: <input type="month" name="mes_entrada"><br>
+
+        Mês de saída: <input type="month" name="mes_saida"><br>
+
+        <input type="reset" value="Limpar Tudo">
+        <input type="submit" value="Enviar">
+
+    </form>
+
+</body>
+
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <!-- 08formularioconta.html -->
+<head>
+    <meta charset="UTF-8">
+    <title>Cadastro de Conta</title>
+</head>
+<body>
+
+<h1>Cadastro de Conta</h1>
+
+<form action="08index.php" method="POST">
+
+<!--aqui é area do meu form-->
+
+<!--aqui estou adicionando meu t-->>
+    <input type="hidden" name="acao" value="criar">
+    <!--hidden esconde os nomes, e não deixa aparecer no meu form-->
+
+    <label>Tipo de conta:</label>
+    <select name="tipo"> <!--abre a lista (tipo o botão de escolha)-->>
+       
+        <option value="poupanca">Poupança</option>
+        <!-- <option>cada opção dentro da lista,  Vai aparecer um botão que você clica e escolhe uma opção-->
+        
+            <option value="especial">Especial</option>
+    </select>
+    <br><br>
+
+    <label>Agência:</label>
+    <input type="text" name="agencia">
+    <br><br>
+
+    <label>Conta:</label>
+    <input type="text" name="conta">
+    <br><br>
+
+    <label>Saldo Inicial:</label>
+    <input type="number" step="0.01" name="saldo">
+    <br><br>
+
+    <label>Reajuste (Poupança):</label>
+    <input type="number" step="0.0001" name="reajuste">
+    <br><br>
+
+    <label>Limite (Especial):</label>
+    <input type="number" step="0.01" name="limite">
+    <br><br>
+
+        <label>Depósito:</label>
+        <button type="button" onclick="mostrarDeposito()">Depositar</button>
+
+    <div id="campoDeposito" style="display:none;">
+        <br>
+        <input type="number" step="0.01" name="deposito">
+    </div>
+
+    <script>
+    function mostrarDeposito() {//aqui encontra um lugar na pagina
+    document.getElementById("campoDeposito").style.display = "block";
+    }//javascript, essaparte serve para a grosso modo falando revear no meu form
+</script>
+
+    <button type="submit">Criar Conta</button>
+    
+
+</form>
+
+</body>
+</html>
